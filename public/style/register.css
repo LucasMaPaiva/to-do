@@ -1,0 +1,15 @@
+.container {
+
+
+}
+
+.adm-or-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.row g-5 {
+  margin: 0 auto;
+}

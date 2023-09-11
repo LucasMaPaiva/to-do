@@ -18,11 +18,20 @@ class screen extends AbstractController
         ]);
     }
 
-    #[Route('/home')]
+    #[Route('/pagina-inicial')]
     public function homePage(): Response
     {
         $pageTitle = 'Lista de tarefas';
         return $this->render('home.html.twig', [
+            'pageTitle' => $pageTitle,
+        ]);
+    }
+
+    #[Route('/cadastro')]
+    public function register(): Response
+    {
+        $pageTitle = 'Cadastro de usuário';
+        return $this->render('register.html.twig', [
             'pageTitle' => $pageTitle,
         ]);
     }
