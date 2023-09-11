@@ -12,6 +12,18 @@ class screen extends AbstractController
     #[Route('/')]
     public function telaLogin(): Response
     {
-        return $this->render('login.html.twig');
+        $pageTitle = 'Entrar';
+        return $this->render('login.html.twig', [
+            'pageTitle' => $pageTitle,
+        ]);
+    }
+
+    #[Route('/home')]
+    public function homePage(): Response
+    {
+        $pageTitle = 'Lista de tarefas';
+        return $this->render('home.html.twig', [
+            'pageTitle' => $pageTitle,
+        ]);
     }
 }
