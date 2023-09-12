@@ -12,7 +12,7 @@ class screen extends AbstractController
     public function telaLogin(): Response
     {
         $pageTitle = 'Entrar';
-        return $this->render('security/login.html.twig', [
+        return $this->render('login.html.twig', [
             'pageTitle' => $pageTitle,
         ]);
     }
