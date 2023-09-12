@@ -8,12 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class screen extends AbstractController
 {
-    // TODO - adicionar a função de login
     #[Route('/')]
     public function telaLogin(): Response
     {
         $pageTitle = 'Entrar';
-        return $this->render('login.html.twig', [
+        return $this->render('security/login.html.twig', [
             'pageTitle' => $pageTitle,
         ]);
     }
