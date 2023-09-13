@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Lista de tarefas {% endblock %}
+
+{% block body %}
+    <h1 class="mb-4">Lista de tarefas</h1>
+    <a class="btn btn-primary mt-3 mb-4" href="{{ path('app_screen_criarnovo') }}">Adicionar novo</a>
+    <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Tarefa</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Data da criação</th>
+            <th scope="col">Ação</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.title }}</td>
+            <td>{{ entity.description }}</td>
+            <td>{{ entity.createAt|date('d/m/Y') }}</td>
+            <td><a class="btn btn-primary" href="{{ path('app_screen_criaredit',{'id':entity.id}) }}">Editar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

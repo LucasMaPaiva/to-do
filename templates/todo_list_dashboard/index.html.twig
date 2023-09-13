@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>To-do List</h1>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                {{ form_start(form) }}
+                <div class="mb-3">
+                    <label class="form-label" for="{{ form.title.vars.id }}">Título</label>
+                    {{ form_widget(form.title, {'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="{{ form.description.vars.id }}">Descrição</label>
+                    {{ form_widget(form.description, {'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="{{ form.createAt.vars.id }}">Data de Inicio</label>
+                    {{ form_widget(form.createAt, {'attr':{'class':'form-control'}, 'format':'d/m/Y'}) }}
+                </div>
+                <button class="btn btn-info">Salvar</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
